@@ -20,19 +20,21 @@ class UIUtil {
         return AnimatedContainer(
           padding: mediaQuery.padding,
           duration: const Duration(milliseconds: 300),
-          child: AlertDialog(
-            title: Text(title),
-            content: content,
-            actions: <Widget>[
-              FlatButton(
-                child: Text("Cancel"),
-                onPressed: () => Navigator.pop(context),
-              ),
-              FlatButton(
-                child: Text("OK"),
-                onPressed: () => Navigator.pop(context, textController.text),
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: AlertDialog(
+              title: Text(title),
+              content: content,
+              actions: <Widget>[
+                FlatButton(
+                  child: Text("Cancel"),
+                  onPressed: () => Navigator.pop(context),
+                ),
+                FlatButton(
+                  child: Text("OK"),
+                  onPressed: () => Navigator.pop(context, textController.text),
+                ),
+              ],
+            ),
           ),
         );
       },
